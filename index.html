@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+       
+        .head{
+            height: 60px;
+            background-color: whitesmoke;
+            border-bottom: 0.1px solid rgb(209, 203, 203);
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .boxes{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .box{
+            height: 80px;
+            width: 80px;
+            border: 0.1px solid rgb(228, 222, 222);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .input_fields{
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .input_fields>input{
+            padding: 10px;
+        }
+        .input_fields>button{
+            padding: 11px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="head">
+         <p class="header_content">Hello</p>
+        
+        </header>
+
+        <div class="boxes">
+            <div id="box1" class="box">
+                <p>Red</p>
+            </div>
+
+            <div id="box2" class="box">
+                <p>Blue</p>
+            </div>
+
+            <div id="box3" class="box">
+                <p>Green</p>
+            </div>
+
+            <div id="box4" class="box">
+                <p>Yellow</p>
+            </div>
+        </div>
+
+        <div class="input_fields">
+            <input type="text" id="userip">
+            <button id="btn">Greet</button>
+        </div>
+    </div>
+<script>
+ let box1 = document.getElementById("box1");
+ let box2 = document.getElementById("box2");
+ let box3 = document.getElementById("box3");
+ let box4 = document.getElementById("box4");
+ let input = document.getElementById('userip');
+ let btn = document.getElementById('btn')
+
+ let header = document.getElementsByClassName('head');
+
+ box1.addEventListener('click',()=>{
+    box1.style.backgroundColor='red'
+    box1.style.color ='white'
+ })
+ box2.addEventListener('click',()=>{
+    box2.style.backgroundColor='blue'
+    box2.style.color ='white'
+ })
+ box3.addEventListener('click',()=>{
+    box3.style.backgroundColor='green'
+    box3.style.color ='white'
+ })
+ box4.addEventListener('click',()=>{
+    box4.style.backgroundColor='yellow'
+   
+ })
+
+ btn.addEventListener('click',()=>{
+    console.log(input.value)
+    let disp = document.createElement('p');
+    disp.innerHTML = ` ,${input.value}`
+    header[0].appendChild(disp)
+ })
+</script>
+</body>
+</html>
